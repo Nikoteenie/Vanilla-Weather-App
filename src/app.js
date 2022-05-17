@@ -82,7 +82,7 @@ function displayMphConversion(event) {
   event.preventDefault();
   let windElement = document.querySelector("#wind");
 
-  let mphWindConversion = Math.round(mhWind / 1609.344);
+  let mphWindConversion = Math.round(mhWind / 1.609344);
   windElement.innerHTML = Math.round(mphWindConversion);
 }
 

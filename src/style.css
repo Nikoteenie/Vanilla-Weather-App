@@ -70,3 +70,12 @@ li:first-letter {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
+
+li .activate {
+  color: blue;
+  cursor: default;
+}
+
+li .activate :hover {
+  text-decoration: none;
+}
