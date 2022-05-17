@@ -7,11 +7,7 @@ h1 {
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
-   margin-bottom: 0;
-}
-
-.fah {
-  text-decoration: none;
+  margin-bottom: 0;
 }
 
 ul {
@@ -29,7 +25,7 @@ li {
 }
 
 li:first-letter {
-text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .weather-app-wrapper {
@@ -64,4 +60,13 @@ text-transform: capitalize;
   position: relative;
   font-size: 16px;
   top: -34px;
+}
+
+.weather-temperature .active {
+  color: blue;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
