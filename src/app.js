@@ -81,7 +81,8 @@ function displayCelsiusTemperature(event) {
 function displayMphConversion(event) {
   event.preventDefault();
   let windElement = document.querySelector("#wind");
-
+  mphWindLink.classList.add("activate");
+  kmhWindLink.classList.remove("activate");
   let mphWindConversion = Math.round(mhWind / 1.609344);
   windElement.innerHTML = Math.round(mphWindConversion);
 }
@@ -89,6 +90,8 @@ function displayMphConversion(event) {
 function displayMhConversion(event) {
   event.preventDefault();
   let windElement = document.querySelector("#wind");
+  mphWindLink.classList.remove("activate");
+  kmhWindLink.classList.add("activate");
   windElement.innerHTML = Math.round(mhWind);
 }
 
@@ -108,7 +111,7 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 let mphWindLink = document.querySelector("#mph-link");
 mphWindLink.addEventListener("click", displayMphConversion);
 
-let mhWindLink = document.querySelector("#mh-link");
-mhWindLink.addEventListener("click", displayMhConversion);
+let kmhWindLink = document.querySelector("#kmh-link");
+kmhWindLink.addEventListener("click", displayMhConversion);
 
 search("New York");

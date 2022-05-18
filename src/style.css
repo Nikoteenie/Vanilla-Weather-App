@@ -76,6 +76,6 @@ li .activate {
   cursor: default;
 }
 
-.weather-temperature .active:hover {
+li .activate:hover {
   text-decoration: none;
 }
