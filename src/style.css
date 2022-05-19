@@ -78,7 +78,7 @@ li .activate {
 
 li .activate:hover {
   text-decoration: none;
-   color: black;
+  color: black;
 }
 
 .weather-forecast {
@@ -89,7 +89,6 @@ li .activate:hover {
 .weather-forecast-date {
   font-size: 16px;
   opacity: 0.5;
- 
 }
 
 .weather-forecast-temperature-min {

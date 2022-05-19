@@ -25,10 +25,10 @@ function formatDate(timestamp) {
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let day= date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-return days[day]; 
+  return days[day];
 }
 
 function displayForecast(response) {
@@ -39,13 +39,17 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
-    forecastHTML =
-      forecastHTML +
-      ` 
+      forecastHTML =
+        forecastHTML +
+        ` 
            <div class="col-2">
-              <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+              <div class="weather-forecast-date">${formatDay(
+                forecastDay.dt
+              )}</div>
              
-              <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="70"/>
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" width="70"/>
               <span class="weather-forecast-temperature-max">
               ${Math.round(forecastDay.temp.max)}°
               </span>
@@ -53,7 +57,8 @@ function displayForecast(response) {
               ${Math.round(forecastDay.temp.min)}°
               </span>
               </div>`;
-  }});
+    }
+  });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -63,7 +68,7 @@ function getForecast(coordinates) {
   let apiKey = "b6520355a84f46a27e6fe4523cdc2546";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(displayForecast);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -161,4 +166,3 @@ let kmhWindLink = document.querySelector("#kmh-link");
 kmhWindLink.addEventListener("click", displayMhConversion);
 
 search("New York");
-
